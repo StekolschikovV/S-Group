@@ -5,6 +5,7 @@ import {RouterModule} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./services/auth.service.service";
 import {AppModule} from "../app.module";
+import {BackendErrorsComponent} from "../shared/components/backend-errors/backend-errors.component";
 
 const routes = [
   {
@@ -18,8 +19,9 @@ const routes = [
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
+
   ],
-  declarations: [ LoginComponent],
+  declarations: [ LoginComponent, BackendErrorsComponent],
   providers: [AuthService]
 })
 export class AuthModule {}

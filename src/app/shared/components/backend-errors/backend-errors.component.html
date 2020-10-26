@@ -1,1 +1,4 @@
-<p>backend-errors works!</p>
+<p *ngIf="backendErrorsProps">errors:</p>
+<ul>
+  <li *ngFor="let err of (backendErrorsProps)?.error.errors">{{err | json}}</li>
+</ul>

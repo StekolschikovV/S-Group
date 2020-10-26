@@ -8,8 +8,7 @@ import {BackendErrorsInterface} from "../../types/backendErrors.interface";
 })
 export class BackendErrorsComponent implements OnInit {
 
-  // @Input('backendErrors') backendErrorsProps: BackendErrorsInterface
-
+  @Input('backendErrors') backendErrorsProps: BackendErrorsInterface
 
   constructor() { }
 
