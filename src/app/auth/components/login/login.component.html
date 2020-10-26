@@ -1,20 +1,20 @@
-<!--<form [formGroup]="form" (ngSubmit)="onSubmit()">-->
-<!--  <input-->
-<!--    type="text"-->
-<!--    class="form-control form-control-lg"-->
-<!--    placeholder="Email"-->
-<!--    formControlName="email"-->
-<!--  />-->
-<!--  <input-->
-<!--    type="password"-->
-<!--    class="form-control form-control-lg"-->
-<!--    placeholder="Password"-->
-<!--    formControlName="password"-->
-<!--  />-->
-<!--  <button-->
-<!--    class="btn btn-lg btn-primary pull-xs-right"-->
-<!--    type="submit">-->
-<!--    Sign in-->
-<!--  </button>-->
-<!--</form>-->
-123
+<!--<app-backend-errors [backendErrors]="authService.errors | async"></app-backend-errors>-->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    placeholder="Email"
+    formControlName="email"
+  />
+  <input
+    type="password"
+    placeholder="Password"
+    formControlName="password"
+  />
+
+  <button
+    [disabled]="form.invalid"
+    type="submit">
+    Sign in
+  </button>
+</form>
+

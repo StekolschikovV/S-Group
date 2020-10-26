@@ -4,6 +4,7 @@ import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./services/auth.service.service";
+import {AppModule} from "../app.module";
 
 const routes = [
   {
