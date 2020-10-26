@@ -8,7 +8,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {AuthModule} from "./auth/auth.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "./forms/forms.module";
-import {AuthInterceptor} from "./shared/services/auth-interceptor.service";
+import {AuthInterceptor} from "./shared/services/authInterceptor.service";
 // import { BackendErrorsComponent } from './shared/components/backend-errors/backend-errors.component';
 
 @NgModule({
