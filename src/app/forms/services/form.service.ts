@@ -28,6 +28,7 @@ export class FormService {
 
   }
 
+
   get() {
     const url = environment.baseUrl + 'forms'
 
@@ -45,6 +46,7 @@ export class FormService {
   }
 
   pagination(pageNum: number) {
+    console.log("pagination")
     this.getPrams.page = pageNum
     this.get()
   }

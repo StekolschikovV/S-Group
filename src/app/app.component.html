@@ -6,6 +6,9 @@
   <li>
     <a [routerLink]="['/login']">login</a>
   </li>
+  <li>
+    <button (click)="authService.logout()">logout</button>
+  </li>
 </ul>
 
 <router-outlet></router-outlet>

@@ -6,6 +6,7 @@ import {BackendErrorsInterface} from "../../shared/types/backendErrors.interface
 import {BehaviorSubject, Subject} from "rxjs";
 import {LoginRequestInterface} from "../types/loginRequest.interface";
 import {LocalStorageInterface} from "../../shared/types/localStorage.interface";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class AuthService {
   response = new BehaviorSubject<LoginResponseInterface>(null)
   token: string
 
-  constructor(private http: HttpClient) {
-this.refresh()
+  constructor(private http: HttpClient, private router: Router) {
+    this.refresh()
   }
 
   public login(dataIn: LoginRequestInterface): void {
@@ -51,5 +52,18 @@ this.refresh()
   }
 
   public logout(): void {
+    const url = environment.baseUrl + 'auth/logout'
+    this.http
+      .post(url, {})
+      .subscribe(
+        (dataR: LoginResponseInterface) => {
+
+        }
+      )
+
+    this.response.next(null)
+    this.token = null
+    localStorage.clear()
+    this.router.navigate(['/login'])
   }
 }
