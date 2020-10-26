@@ -6,7 +6,9 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './auth/components/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthModule} from "./auth/auth.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "./forms/forms.module";
+import {AuthInterceptor} from "./shared/services/auth-interceptor.service";
 // import { BackendErrorsComponent } from './shared/components/backend-errors/backend-errors.component';
 
 @NgModule({
@@ -19,8 +21,15 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     ReactiveFormsModule,
     AuthModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   exports: [
 
   ],

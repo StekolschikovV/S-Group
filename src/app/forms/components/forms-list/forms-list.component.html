@@ -1,0 +1,17 @@
+forms:
+
+<ul>
+  <li *ngFor="let form of formService.data">
+    {{form.id}}
+
+  </li>
+</ul>
+
+<hr>
+
+pagination:
+<ul>
+  <li *ngFor="let p of [].constructor((formService.meta)?.pages_count); let i = index" (click)="formService.pagination(i+1)">
+    {{i + 1}} {{(formService.meta)?.page == (i + 1) ? "<---" : "" }}
+  </li>
+</ul>
